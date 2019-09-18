@@ -155,6 +155,7 @@ class StudentTest extends Component {
           result = {...this.getStatusAndValue(volumeConversions, 'liters', question, index)}
         }
       })
+      console.log(result)
       this.setState({result})
     }
 
@@ -162,22 +163,19 @@ class StudentTest extends Component {
       let result = {
         [`Q${index}`]: {}
       }
-      let output = 0
-      try {
-        output = parseFloat(question.output).toFixed(3)
-      } catch (e) {
-        console.log(e)
-      }
+      let output = question.output
+
       if (converter[question.units][question.targetUnits]) {
         result[`Q${index}`].value = converter[question.units][question.targetUnits](question.input)
-        console.log(question, 'question')
-        result[`Q${index}`].status = result[`Q${index}`].value.toFixed(3) === output ? 'Correct' : 'InCorrect'
+        let precision = (result[`Q${index}`].value + '.').split('.')[1].length
+        result[`Q${index}`].status = result[`Q${index}`].value.toFixed(precision) === parseFloat(output).toFixed(precision) ? 'Correct' : 'InCorrect'
         return result
       }
       let commonValue = converter[question.units][commonConverter](question.input)
-      if (converter['liters'][question.targetUnits]) {
+      if (converter[commonConverter][question.targetUnits]) {
         result[`Q${index}`].value = converter[commonConverter][question.targetUnits](commonValue)
-        result[`Q${index}`].status = result[`Q${index}`].value.toFixed(3) === output ? 'Correct' : 'InCorrect'
+        let precision = (result[`Q${index}`].value + '.').split('.')[1].length
+        result[`Q${index}`].status = result[`Q${index}`].value.toFixed(precision) === parseFloat(output).toFixed(precision) ? 'Correct' : 'InCorrect'
       } else {
         result[`Q${index}`].value = 0
         result[`Q${index}`].status = 'INValid'
