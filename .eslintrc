@@ -1,0 +1,43 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "standard", 
+    "standard-react"
+  ],
+  "plugins": [
+    "html",
+    "import",
+    "node",
+    "promise",
+    "react",
+    "standard"
+  ],
+  "rules": {
+    "brace-style": 0,
+    "camelcase": 0,
+    "eol-last": 1,
+    "handle-callback-err": 0,
+    "indent": 1,
+    "no-eval": 1,
+    "no-throw-literal": 0,
+    "no-redeclare": 1,
+    "no-trailing-spaces": 1,
+    "no-unused-vars": 1,
+    "semi": 1,
+    "space-before-blocks": 1,
+    "space-before-function-paren": 1,
+    
+    "react/jsx-indent": 0,
+    "react/jsx-no-bind": 0,
+    "react/no-unused-prop-types": 0,
+    "react/prop-types": 0,
+    "react/self-closing-comp": 1,
+
+    "standard/object-curly-even-spacing": 1
+  }
+}
