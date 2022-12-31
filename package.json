@@ -9,7 +9,7 @@
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-html": "^4.0.3",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^6.0.1",
@@ -29,7 +29,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "react-scripts": "1.1.4",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "thunk": "0.0.1"
